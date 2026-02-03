@@ -8,4 +8,11 @@ This repository contains a WGS/WES variant calling pipeline using:
 
 Environment: WSL2 + Conda (Ubuntu)
 
-# Variant-Calling
+## Tutorial source
+
+This pipeline is based on and adapted from the following YouTube tutorial:
+
+- https://www.youtube.com/watch?v=iHkiQvxyr5c
+
+The implementation has been restructured for reproducibility, clarity, and best practices.
+
