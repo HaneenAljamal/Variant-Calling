@@ -1,0 +1,10 @@
+reads/
+data/
+results/
+
+*.fastq
+*.fastq.gz
+*.bam
+*.bai
+*.vcf
+*.vcf.gz
