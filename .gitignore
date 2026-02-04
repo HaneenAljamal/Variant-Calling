@@ -1,10 +1,31 @@
+
+# Reference genome & indexes
+supporting_files/
+*.fa
+*.fa.gz
+*.fai
+*.dict
+
+# Known sites / dbSNP
+*.vcf
+*.vcf.gz
+*.tbi
+
+# Reads & outputs
 reads/
-data/
 results/
+*.bam
+*.bai
+
+# Conda / temp
+.env
+*.log
+
+
+
+data/
+
 
 *.fastq
 *.fastq.gz
-*.bam
-*.bai
-*.vcf
-*.vcf.gz
+
