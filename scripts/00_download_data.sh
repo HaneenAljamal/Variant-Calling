@@ -1,10 +1,15 @@
 #!/bin/bash
+set -euo pipefail
 
-# Download paired-end FASTQ files from 1000 Genomes (HG00096)
-mkdir -p reads
+base="$HOME/variant-calling"
+reads="$base/reads"
 
-wget -P reads \
-ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/phase3/data/HG00096/sequence_read/SRR062634_1.filt.fastq.gz
+mkdir -p "$reads"
 
-wget -P reads \
-ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/phase3/data/HG00096/sequence_read/SRR062634_2.filt.fastq.gz
+wget -c -P "$reads" \
+https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR062/SRR062634/SRR062634_1.fastq.gz
+
+wget -c -P "$reads" \
+https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR062/SRR062634/SRR062634_2.fastq.gz
+
+
