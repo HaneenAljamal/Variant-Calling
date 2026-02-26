@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir -p "$reads"
+mkdir -p ${REF}
+
 
 # reference files
 ref="/home/hannoneh90/variant-calling/supporting_files/hg38/hg38.fa"
