@@ -39,7 +39,7 @@ gatk CreateSequenceDictionary \
 echo "Downloading dbSNP known sites..."
 
 wget -c https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz
-wget -c https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz.tbi
+tabix -p vcf GCF_000001405.40.gz
 
 # =========================
 # 5. Sanity checks
