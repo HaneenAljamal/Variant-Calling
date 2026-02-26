@@ -1,14 +1,13 @@
 #!/bin/bash
 set -euo pipefail
+source "$(dirname "$0")/config.sh"
 
 # =========================
 # Paths
 # =========================
-BASE_DIR=/home/hannoneh90/variant-calling
-REF_DIR=${BASE_DIR}/supporting_files/hg38
 
-mkdir -p ${REF_DIR}
-cd ${REF_DIR}
+
+cd ${REF}
 
 # =========================
 # 1. Download GATK-compatible reference FASTA (GRCh38)
