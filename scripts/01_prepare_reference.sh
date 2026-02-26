@@ -7,7 +7,7 @@ source "$(dirname "$0")/config.sh"
 # =========================
 
 
-cd ${REF}
+cd "$ref_dir"
 
 # =========================
 # 1. Download GATK-compatible reference FASTA (GRCh38)
