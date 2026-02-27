@@ -6,8 +6,6 @@ source "$(dirname "$0")/config.sh"
 
 echo "Step 3: Align reads with BWA-MEM"
 
-mkdir -p "$aligned_reads"
-
 bwa mem -t 4 \
 
 -R "@RG\tID:SRR062634\tPL:ILLUMINA\tSM:SRR062634" \
