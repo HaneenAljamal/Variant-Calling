@@ -12,6 +12,7 @@ bwa mem -t 4 \
   "$reads"/SRR062634_1.fastq.gz \
   "$reads"/SRR062634_2.fastq.gz \
 | samtools view -bS - \
-| samtools sort -@ 4 -o "$aligned_reads/SRR062634.sorted.bam"
+|samtools sort -@ 2 -m 2G \
+  -o "$aligned_reads/SRR062634.sorted.bam"
 
 echo "Alignment completed successfully"
