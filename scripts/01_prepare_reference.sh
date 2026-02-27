@@ -49,4 +49,16 @@ echo "Checking contig compatibility..."
 bcftools view -h GCF_000001405.40.gz | grep "^##contig" | head
 grep "^>" hg38.fa | head
 
+# =========================
+# 6. Indexing reference with BWA
+# =========================
+
+if [ ! -f "${ref}.bwt" ]; then
+    echo "Indexing reference with BWA..."
+    bwa index "$ref"
+else
+    echo "BWA index already exists. Skipping."
+fi
+
+# =========================
 echo "Reference preparation completed successfully ✅"
