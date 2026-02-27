@@ -6,7 +6,7 @@ source "$(dirname "$0")/config.sh"
 
 echo "Step 3: Align reads with BWA-MEM"
 
-bwa mem -t 4 \
+bwa mem -t 2 \
   -R "@RG\tID:SRR062634\tPL:ILLUMINA\tSM:SRR062634" \
   "$ref" \
   "$reads"/SRR062634_1.fastq.gz \
