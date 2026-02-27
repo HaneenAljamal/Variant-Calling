@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -euo pipefail
+
+source "$(dirname "$0")/config.sh"
+
+echo "Step 3: Align reads with BWA-MEM"
+
+mkdir -p "$aligned_reads"
+
+bwa mem -t 4 \
+
+-R "@RG\tID:SRR062634\tPL:ILLUMINA\tSM:SRR062634" \
+
+"$ref" \
+
+"$reads/SRR062634_1.fastq.gz" \
+
+"$reads/SRR062634_2.fastq.gz" \
+
+| samtools view -bS - \
+
+| samtools sort -@ 4 -o "$aligned_reads/SRR062634.sorted.bam"
+
+samtools index "$aligned_reads/SRR062634.sorted.bam"
+
+samtools quickcheck "$aligned_reads/SRR062634.sorted.bam"
+
+echo "Alignment completed successfully"
