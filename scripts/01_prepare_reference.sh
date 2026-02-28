@@ -38,8 +38,8 @@ gatk CreateSequenceDictionary \
 # =========================
 echo "Downloading dbSNP known sites..."
 
-wget -c https://ftp.broadinstitute.org/bundle/hg38/dbsnp_138.hg38.vcf.gz
-wget -c https://ftp.broadinstitute.org/bundle/hg38/dbsnp_138.hg38.vcf.gz.tbi
+wget -c https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz
+tabix -p vcf GCF_000001405.40.gz
 
 
 
