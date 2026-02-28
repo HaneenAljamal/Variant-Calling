@@ -38,15 +38,16 @@ gatk CreateSequenceDictionary \
 # =========================
 echo "Downloading dbSNP known sites..."
 
-wget -c https://ftp.ncbi.nlm.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz
-tabix -p vcf GCF_000001405.40.gz
+wget -c https://ftp.broadinstitute.org/bundle/hg38/dbsnp_138.hg38.vcf.gz
+wget -c https://ftp.broadinstitute.org/bundle/hg38/dbsnp_138.hg38.vcf.gz.tbi
+
+
 
 # =========================
 # 5. Sanity checks
 # =========================
 echo "Checking contig compatibility..."
-
-bcftools view -h GCF_000001405.40.gz | grep "^##contig" | head
+bcftools view -h dbsnp_138.hg38.vcf.gz | grep "^##contig" | head
 grep "^>" hg38.fa | head
 
 # =========================
