@@ -91,7 +91,7 @@ tabix -p vcf dbsnp_hg38_chr.vcf.gz
 # 5. Sanity checks
 # =========================
 echo "Checking contig compatibility..."
-bcftools view -h dbsnp_138.hg38.vcf.gz | grep "^##contig" | head
+bcftools view -h dbsnp_hg38_chr.vcf.gz | grep "^##contig" | head
 grep "^>" hg38.fa | head
 
 # =========================
