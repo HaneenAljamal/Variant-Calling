@@ -14,11 +14,12 @@ cd "$ref_dir"
 # =========================
 echo "Downloading reference genome..."
 
-wget -c https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_44/GRCh38.primary_assembly.genome.fa.gz
+wget -c https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GCF_000001405.40_GRCh38.p14_genomic.fna.gz
 
-gunzip -f GRCh38.primary_assembly.genome.fa.gz
-mv GRCh38.primary_assembly.genome.fa hg38.fa
 
+gunzip GCF_000001405.40_GRCh38.p14_genomic.fna.gz
+
+mv GCF_000001405.40_GRCh38.p14_genomic.fna hg38.fa
 # =========================
 # 2. Index FASTA (samtools)
 # =========================
@@ -46,7 +47,7 @@ tabix -p vcf GCF_000001405.40.gz
 # 5. Sanity checks
 # =========================
 echo "Checking contig compatibility..."
-bcftools view -h dbsnp_hg38_chr.vcf.gz | grep "^##contig" | head
+bcftools view -h GCF_000001405.40.gz | grep "^##contig" | head
 grep "^>" hg38.fa | head
 
 # =========================
