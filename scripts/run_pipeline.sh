@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euo pipefail
+
+mkdir -p logs
+
+# Activate your conda environment
+echo "Activating conda environment 'gatk'..."
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate gatk
+
+echo "Starting pipeline..."
+
+bash scripts/00_download_data.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/00_download_data.log)
+bash scripts/01_prepare_reference.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/01_prepare_reference.log)
+bash scripts/02_fastqc.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/02_fastqc.log)
+bash scripts/03_alignment_bwa.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/03_alignment_bwa.log)
+bash scripts/04_mark_duplicates.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/04_mark_duplicates.log)
+bash scripts/05_bqsr.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/05_bqsr.log)
+
+
+echo "Pipeline finished successfully"
