@@ -2,7 +2,7 @@
 
 # reference files
 ref="/home/hannoneh90/variant-calling/supporting_files/hg38/hg38.fa"
-known_sites="/home/hannoneh90/variant-calling/supporting_files/hg38/dbsnp_hg38_chr.vcf.gz"
+known_sites="$ref_dir/dbsnp_hg38.vcf.gz"
 
 # directories
 reads="/home/hannoneh90/variant-calling/reads"
