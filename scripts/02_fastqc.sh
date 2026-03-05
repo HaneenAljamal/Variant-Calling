@@ -2,6 +2,7 @@
 set -euo pipefail
 source "$(dirname "$0")/config.sh"
 
+echo "Step 2: Running FastQC"
 
 fastqc -t 4 ${reads}/SRR062634_1.fastq.gz ${reads}/SRR062634_2.fastq.gz -o ${reads}
 
