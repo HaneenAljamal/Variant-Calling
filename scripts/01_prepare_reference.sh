@@ -49,7 +49,7 @@ mv GCF_000001405.40.gz.tbi dbsnp_hg38.vcf.gz.tbi
 # 5. Sanity checks
 # =========================
 echo "Checking contig compatibility..."
-bcftools view -h GCF_000001405.40.gz | grep "^##contig" | head
+bcftools view -h dbsnp_hg38.vcf.gz | grep "^##contig" | head
 grep "^>" hg38.fa | head
 
 # =========================
