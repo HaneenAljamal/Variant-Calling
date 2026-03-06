@@ -61,7 +61,7 @@ scripts/config.sh
 variant-calling/
 
 scripts/
- ├── contig.sh
+ ├── config.sh
  ├── run_pipeline.sh
  ├── 00_download_data.sh
  ├── 01_prepare_reference.sh
