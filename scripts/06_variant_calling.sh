@@ -2,7 +2,7 @@
 set -euo pipefail
 source "$(dirname "$0")/config.sh"
 
-echo "Running HaplotypeCaller..."
+echo "Step 6: Running HaplotypeCaller..."
 
 gatk HaplotypeCaller \
   -R $ref \
