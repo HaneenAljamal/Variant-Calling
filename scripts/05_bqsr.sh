@@ -2,6 +2,11 @@
 set -euo pipefail
 source "$(dirname "$0")/config.sh"
 
+if [ ! -f "$aligned_reads/SRR062634.sorted.markdup.bam" ]; then
+    echo "ERROR: MarkDuplicates output missing"
+    exit 1
+fi
+
 echo "Step 5a: Building recalibration model (BaseRecalibrator)"
 
 gatk BaseRecalibrator \
