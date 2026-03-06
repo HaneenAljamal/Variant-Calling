@@ -118,12 +118,20 @@ scripts/00_download_data.sh
 
 ## Example Output 
 ```
-results/
+aligned_reads/
+ ├── SRR062634.sorted.bam
+ ├── SRR062634.sorted.markdup.bam
+ └── SRR062634.sorted.markdup.bai
 
-SRR062634.raw_variants.vcf.gz
-SRR062634.filtered_variants.vcf.gz
-SRR062634.pass_variants.vcf.gz
-SRR062634.annotated.vcf
-variant_statistics.txt
-pipeline_report.txt
+results/
+ ├── SRR062634.raw_variants.vcf.gz
+ ├── SRR062634.filtered_variants.vcf.gz
+ ├── SRR062634.pass_variants.vcf.gz
+ ├── SRR062634.annotated.vcf
+ └── variant_statistics.txt
+
+logs/
+ ├── 01_prepare_reference.log
+ ├── 02_fastqc.log
+ ├── ...
 ```
