@@ -62,6 +62,7 @@ variant-calling/
 
 scripts/
  ├── contig.sh
+ ├── run_pipeline.sh
  ├── 00_download_data.sh
  ├── 01_prepare_reference.sh
  ├── 02_fastqc.sh
@@ -81,7 +82,8 @@ results/
 supporting_files/
 logs/
 
-run_pipeline.sh
+
+environment.yml
 README.md
 ```
 
