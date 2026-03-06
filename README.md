@@ -88,15 +88,22 @@ README.md
 ## Running the Pipeline
 
 Clone the repository:
-
+```
 git clone https://github.com/HaneenAljamal/Variant-Calling.git
 
 cd variant-calling
+```
+
+Create the environment:
+```
+conda env create -f environment.yml
+conda activate gatk
+```
 
 Run the pipeline:
-
+```
 bash scripts/run_pipeline.sh
-
+```
 ## Example Dataset
 
 The pipeline currently uses the SRA dataset:
