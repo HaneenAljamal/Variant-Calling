@@ -58,7 +58,7 @@ scripts/config.sh
 
 ## Project Structure
 ```
-variant-calling/
+Variant-Calling/
 ├── README.md
 ├── environment.yml
 ├── .gitignore
@@ -93,7 +93,7 @@ Clone the repository:
 ```
 git clone https://github.com/HaneenAljamal/Variant-Calling.git
 
-cd variant-calling
+cd Variant-Calling
 ```
 
 Create the environment:
