@@ -59,32 +59,32 @@ scripts/config.sh
 ## Project Structure
 ```
 variant-calling/
-
-scripts/
- ├── config.sh
- ├── run_pipeline.sh
- ├── 00_download_data.sh
- ├── 01_prepare_reference.sh
- ├── 02_fastqc.sh
- ├── 03_alignment_bwa.sh
- ├── 04_mark_duplicates.sh
- ├── 05_bqsr.sh
- ├── 06_variant_calling.sh
- ├── 07_variant_filtering.sh
- ├── 08_select_pass_variants.sh
- ├── 09_annotation.sh
- ├── 10_variant_statistics.sh
- └── 11_generate_report.sh
-
-reads/
-aligned_reads/
-results/
-supporting_files/
-logs/
-
-
-environment.yml
-README.md
+├── README.md
+├── environment.yml
+├── .gitignore
+│
+├── scripts/
+│   ├── config.sh
+│   ├── run_pipeline.sh
+│   ├── 00_download_data.sh
+│   ├── 01_prepare_reference.sh
+│   ├── 02_fastqc.sh
+│   ├── 03_alignment_bwa.sh
+│   ├── 04_mark_duplicates.sh
+│   ├── 05_bqsr.sh
+│   ├── 06_variant_calling.sh
+│   ├── 07_variant_filtering.sh
+│   ├── 08_select_pass_variants.sh
+│   ├── 09_annotation.sh
+│   ├── 10_variant_statistics.sh
+│   └── 11_generate_report.sh
+│
+├── reads/              # FASTQ files
+├── aligned_reads/      # BAM files
+├── results/            # VCF outputs
+├── data/               # intermediate files (BQSR tables etc.)
+├── supporting_files/   # reference genome + dbSNP
+└── logs/               # pipeline logs
 ```
 
 ## Running the Pipeline
