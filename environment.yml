@@ -1,0 +1,15 @@
+name: gatk
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+
+dependencies:
+  - bwa
+  - samtools
+  - gatk4
+  - bcftools
+  - fastqc
+  - sra-tools
+  - tabix
+  - openjdk
