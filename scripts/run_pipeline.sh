@@ -10,6 +10,7 @@ conda activate gatk
 
 echo "Starting pipeline..."
 
+bash scripts/00_download_data.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/00_download_data.log)
 bash scripts/01_prepare_reference.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/01_prepare_reference.log)
 bash scripts/02_fastqc.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/02_fastqc.log)
 bash scripts/03_alignment_bwa.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/03_alignment_bwa.log)
