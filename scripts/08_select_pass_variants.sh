@@ -7,7 +7,7 @@ if [ ! -f "$results/SRR062634.filtered_variants.vcf.gz" ]; then
     exit 1
 fi
 
-echo "step 8: PASS variants extractcion"
+echo "step 8: PASS variants extraction"
 
 bcftools view \
   -f PASS \
