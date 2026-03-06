@@ -9,6 +9,6 @@ fi
 
 echo "step 9: annotation"
 
-snpEff GRCh38.105 \
+snpEff GRCh38.p14 \
   $results/SRR062634.pass_variants.vcf.gz \
   > $results/SRR062634.annotated.vcf
