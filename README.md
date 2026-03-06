@@ -53,8 +53,9 @@ Report Generation
 ## Configuration
 
 Pipeline paths and variables are defined in:
-
+```
 scripts/config.sh
+```
 
 ## Project Structure
 ```
@@ -113,8 +114,9 @@ The pipeline currently uses the SRA dataset:
 SRR062634
 
 Data is automatically downloaded into the `reads/` directory using:
-
+```
 scripts/00_download_data.sh
+```
 
 ## Example Output 
 ```
