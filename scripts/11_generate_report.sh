@@ -2,7 +2,7 @@
 set -euo pipefail
 source "$(dirname "$0")/config.sh"
 
-echo "Generating pipeline report..."
+echo "step 11: Generating pipeline report..."
 
 report="$results/pipeline_report.txt"
 
