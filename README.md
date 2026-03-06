@@ -50,6 +50,12 @@ Report Generation
 * bcftools
 * FastQC
 
+## Configuration
+
+Pipeline paths and variables are defined in:
+
+scripts/config.sh
+
 ## Project Structure
 ```
 variant-calling/
