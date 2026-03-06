@@ -17,14 +17,28 @@ This pipeline is based on and adapted from the following YouTube tutorial:
 The implementation has been restructured for reproducibility, clarity, and best practices.
 
 
-## Pipeline Steps
+# Pipeline Overview
 
-1. Reference genome preparation
-2. Quality control using FastQC
-3. Read alignment using BWA-MEM
-4. Sorting alignments
-5. Marking PCR duplicates
-6. Base Quality Score Recalibration (BQSR)
+FASTQ
+ ↓
+FastQC
+ ↓
+Alignment (BWA)
+ ↓
+Mark Duplicates
+ ↓
+Base Quality Score Recalibration (BQSR)
+ ↓
+Variant Calling (HaplotypeCaller)
+ ↓
+Variant Filtering
+ ↓
+Variant Annotation
+
+## Installation
+
+conda env create -f environment.yml
+conda activate gatk
 
 ## Tools Used
 
@@ -35,20 +49,13 @@ The implementation has been restructured for reproducibility, clarity, and best 
 * FastQC
 
 ## Project Structure
-
-variant-calling/
-
 scripts/
-
 reads/
-
 aligned_reads/
-
 results/
+supporting_files/
+logs/
 
-data/
-
-supporting_files/hg38/
 
 ## Running the Pipeline
 
@@ -74,9 +81,7 @@ scripts/00_download_data.sh
 
 ## Output Files
 
-The main outputs include:
-
-* aligned BAM files
-* duplicate-marked BAM files
-* recalibrated BAM files
-
+results/
+ ├── SRR062634.raw_variants.vcf.gz
+ ├── SRR062634.filtered_variants.vcf.gz
+ └── SRR062634.annotated.vcf
