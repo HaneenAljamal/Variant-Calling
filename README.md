@@ -18,7 +18,7 @@ The implementation has been restructured for reproducibility, clarity, and best 
 
 
 # Pipeline Overview
-
+```
 FASTQ
  ↓
 Quality Control (FastQC)
@@ -40,7 +40,7 @@ Variant Annotation
 Variant Statistics
  ↓
 Report Generation
-
+```
 
 ## Tools Used
 
@@ -51,9 +51,11 @@ Report Generation
 * FastQC
 
 ## Project Structure
+```
 variant-calling/
 
 scripts/
+ ├── contig.sh
  ├── 00_download_data.sh
  ├── 01_prepare_reference.sh
  ├── 02_fastqc.sh
@@ -75,7 +77,7 @@ logs/
 
 run_pipeline.sh
 README.md
-
+```
 
 ## Running the Pipeline
 
@@ -100,7 +102,7 @@ Data is automatically downloaded into the `reads/` directory using:
 scripts/00_download_data.sh
 
 ## Example Output 
-
+```
 results/
 
 SRR062634.raw_variants.vcf.gz
@@ -109,3 +111,4 @@ SRR062634.pass_variants.vcf.gz
 SRR062634.annotated.vcf
 variant_statistics.txt
 pipeline_report.txt
+```
