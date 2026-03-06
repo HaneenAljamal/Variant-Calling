@@ -4,6 +4,11 @@ set -euo pipefail
 
 source "$(dirname "$0")/config.sh"
 
+if [ ! -f "$reads/SRR062634_1.fastq" ]; then
+    echo "ERROR: FASTQ file not found"
+    exit 1
+fi
+
 echo "Step 3: Align reads with BWA-MEM"
 
 bwa mem -t 2 \
