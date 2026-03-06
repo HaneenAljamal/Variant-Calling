@@ -21,24 +21,26 @@ The implementation has been restructured for reproducibility, clarity, and best 
 
 FASTQ
  ↓
-FastQC
+Quality Control (FastQC)
  ↓
-Alignment (BWA)
+Alignment (BWA-MEM)
  ↓
-Mark Duplicates
+Sorting & Mark Duplicates
  ↓
 Base Quality Score Recalibration (BQSR)
  ↓
-Variant Calling (HaplotypeCaller)
+Variant Calling (GATK HaplotypeCaller)
  ↓
 Variant Filtering
  ↓
+PASS Variant Selection
+ ↓
 Variant Annotation
+ ↓
+Variant Statistics
+ ↓
+Report Generation
 
-## Installation
-
-conda env create -f environment.yml
-conda activate gatk
 
 ## Tools Used
 
@@ -49,12 +51,30 @@ conda activate gatk
 * FastQC
 
 ## Project Structure
+variant-calling/
+
 scripts/
+ ├── 00_download_data.sh
+ ├── 01_prepare_reference.sh
+ ├── 02_fastqc.sh
+ ├── 03_alignment_bwa.sh
+ ├── 04_mark_duplicates.sh
+ ├── 05_bqsr.sh
+ ├── 06_variant_calling.sh
+ ├── 07_variant_filtering.sh
+ ├── 08_select_pass_variants.sh
+ ├── 09_annotation.sh
+ ├── 10_variant_statistics.sh
+ └── 11_generate_report.sh
+
 reads/
 aligned_reads/
 results/
 supporting_files/
 logs/
+
+run_pipeline.sh
+README.md
 
 
 ## Running the Pipeline
@@ -79,9 +99,13 @@ Data is automatically downloaded into the `reads/` directory using:
 
 scripts/00_download_data.sh
 
-## Output Files
+## Example Output 
 
 results/
- ├── SRR062634.raw_variants.vcf.gz
- ├── SRR062634.filtered_variants.vcf.gz
- └── SRR062634.annotated.vcf
+
+SRR062634.raw_variants.vcf.gz
+SRR062634.filtered_variants.vcf.gz
+SRR062634.pass_variants.vcf.gz
+SRR062634.annotated.vcf
+variant_statistics.txt
+pipeline_report.txt
