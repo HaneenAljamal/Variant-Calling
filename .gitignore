@@ -1,31 +1,44 @@
-
-# Reference genome & indexes
+# Reference files
 supporting_files/
 *.fa
-*.fa.gz
 *.fai
 *.dict
+*.amb
+*.ann
+*.bwt
+*.pac
+*.sa
 
-# Known sites / dbSNP
+# Known variant databases
 *.vcf
 *.vcf.gz
 *.tbi
 
-# Reads & outputs
+# Reads
 reads/
-results/
-*.bam
-*.bai
-
-# Conda / temp
-.env
-*.log
-
-
-
-data/
-
-
 *.fastq
 *.fastq.gz
 
+# Alignment files
+aligned_reads/
+*.bam
+*.bai
+*.sam
+
+# Pipeline results
+results/
+
+# Logs
+logs/
+*.log
+
+# Conda environments
+.env
+.conda/
+
+# Temporary files
+*.tmp
+*.swp
+
+# OS
+.DS_Store
