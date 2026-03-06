@@ -1,3 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+source "$(dirname "$0")/config.sh"
+
+echo "step 7: variant filtering"
+
 gatk VariantFiltration \
   -R $ref \
   -V $results/SRR062634.raw_variants.vcf.gz \
