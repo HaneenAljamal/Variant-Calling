@@ -68,7 +68,9 @@ The pipeline currently uses the SRA dataset:
 
 SRR062634
 
-Data should be downloaded to $reads folder (check 00_download_data.sh script)
+Data is automatically downloaded into the `reads/` directory using:
+
+scripts/00_download_data.sh
 
 ## Output Files
 
