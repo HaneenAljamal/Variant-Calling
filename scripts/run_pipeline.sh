@@ -21,5 +21,6 @@ bash scripts/07_variant_filtering.sh 2>&1 | tee >(while read line; do echo "$(da
 bash scripts/08_select_pass_variants.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/08_select_pass_variants.log
 bash scripts/09_annotation.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/09_annotation.log
 bash scripts/10_variant_statistics.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/10_variant_statistics.log
+bash scripts/11_generate_report.sh 2>&1 | tee >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done > logs/11_generate_report.log
 
 echo "Pipeline finished successfully"
