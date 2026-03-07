@@ -29,3 +29,9 @@ echo "" >> $report
 echo "Pipeline completed successfully." >> $report
 
 echo "Report saved to $report"
+
+echo "Generating variant table..."
+
+bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%INFO/ANN\n' \
+results/SRR062634.annotated.vcf \
+> results/variant_table.tsv
