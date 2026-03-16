@@ -1,4 +1,4 @@
-# Variant Calling Pipeline
+# Variant Calling Tutorial Pipeline
 
 This repository contains a WGS/WES variant calling pipeline using:
 - FastQC
