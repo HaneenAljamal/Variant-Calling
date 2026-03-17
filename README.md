@@ -88,6 +88,10 @@ Variant-Calling/
 └── logs/               # pipeline logs
 ```
 
+### Input Requirements
+
+The pipeline expects a single FASTQ file placed in the `reads/` directory.
+
 ## Running the Pipeline
 
 Clone the repository:
