@@ -96,7 +96,10 @@ git clone https://github.com/HaneenAljamal/Variant-Calling.git
 
 cd Variant-Calling
 ```
-
+# add your FASTQ files 
+```
+cp sample.fastq.gz reads/
+```
 Create the environment:
 ```
 conda env create -f environment.yml
