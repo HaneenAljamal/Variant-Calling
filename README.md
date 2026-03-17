@@ -96,7 +96,7 @@ git clone https://github.com/HaneenAljamal/Variant-Calling.git
 
 cd Variant-Calling
 ```
-# add your FASTQ files 
+## Add Your FASTQ Files 
 ```
 cp sample.fastq.gz reads/
 ```
