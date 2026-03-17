@@ -88,9 +88,6 @@ Variant-Calling/
 └── logs/               # pipeline logs
 ```
 
-### Input Requirements
-
-The pipeline expects a single FASTQ file placed in the `reads/` directory.
 
 ## Running the Pipeline
 
@@ -99,10 +96,6 @@ Clone the repository:
 git clone https://github.com/HaneenAljamal/Variant-Calling.git
 
 cd Variant-Calling
-```
-Add Your FASTQ File
-```
-cp sample.fastq.gz reads/
 ```
 Create the environment:
 ```
